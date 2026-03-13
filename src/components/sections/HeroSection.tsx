@@ -57,8 +57,8 @@ export default function HeroSection() {
                 View Experience <ArrowDown size={16} />
               </button>
               <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); generateResumePDF(); }}
+                href="/resume.pdf"
+                download="Saurabh_Yadav_Resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm text-white border border-white/10 hover:border-cyan-500/40 hover:bg-white/5 transition-all"
               >
                 Download Resume <Download size={16} />

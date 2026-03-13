@@ -90,13 +90,14 @@ export default function ContactSection() {
             Send Me a Message
           </a>
           <div className="mt-4">
-            <button
-              onClick={generateResumePDF}
+            <a
+              href="/resume.pdf"
+              download="Saurabh_Yadav_Resume.pdf"
               className="inline-flex items-center gap-2 text-muted text-sm hover:text-white transition-colors cursor-pointer"
             >
               <Download size={14} />
               Download Resume PDF
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
