@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
+import { generateResumePDF } from "@/lib/generateResume";
 import { ArrowDown, Download, ExternalLink } from "lucide-react";
 
 export default function HeroSection() {
@@ -57,7 +58,7 @@ export default function HeroSection() {
               </button>
               <a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
+                onClick={(e) => { e.preventDefault(); generateResumePDF(); }}
                 className="flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm text-white border border-white/10 hover:border-cyan-500/40 hover:bg-white/5 transition-all"
               >
                 Download Resume <Download size={16} />

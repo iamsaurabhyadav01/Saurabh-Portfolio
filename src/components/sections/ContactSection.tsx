@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { resumeData } from "@/data/resume";
+import { generateResumePDF } from "@/lib/generateResume";
 import { Mail, Phone, MapPin, Linkedin, ExternalLink, Download } from "lucide-react";
 
 export default function ContactSection() {
@@ -89,7 +90,10 @@ export default function ContactSection() {
             Send Me a Message
           </a>
           <div className="mt-4">
-            <button className="inline-flex items-center gap-2 text-muted text-sm hover:text-white transition-colors">
+            <button
+              onClick={generateResumePDF}
+              className="inline-flex items-center gap-2 text-muted text-sm hover:text-white transition-colors cursor-pointer"
+            >
               <Download size={14} />
               Download Resume PDF
             </button>
