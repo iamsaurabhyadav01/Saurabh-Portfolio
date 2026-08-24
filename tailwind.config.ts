@@ -10,39 +10,28 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["'Syne'", "serif"],
-        body: ["'Syne'", "sans-serif"],
+        display: ["'Fraunces'", "serif"],
+        body: ["'Inter'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },
       colors: {
-        bg: "#030712",
-        surface: "#0d1117",
-        border: "#1e2736",
-        accent: "#00d4ff",
-        accent2: "#7c3aed",
-        text: "#e2e8f0",
-        muted: "#64748b",
-      },
-      animation: {
-        "float": "float 6s ease-in-out infinite",
-        "pulse-slow": "pulse 4s ease-in-out infinite",
-        "counter": "counter 2s ease-out forwards",
-        "slide-up": "slideUp 0.6s ease-out forwards",
-        "glow": "glow 2s ease-in-out infinite alternate",
+        paper: "#f7f3ec",
+        surface: "#fffdf9",
+        ink: "#201d19",
+        line: "#e2dacb",
+        muted: "#7a7266",
+        rust: "#b3452b",
+        rustDark: "#8f3620",
+        moss: "#586a4c",
       },
       keyframes: {
-        float: {
-          "0%,100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
         slideUp: {
-          from: { opacity: "0", transform: "translateY(30px)" },
+          from: { opacity: "0", transform: "translateY(24px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        glow: {
-          from: { boxShadow: "0 0 10px rgba(0,212,255,0.2)" },
-          to: { boxShadow: "0 0 30px rgba(0,212,255,0.6), 0 0 60px rgba(0,212,255,0.2)" },
-        },
+      },
+      animation: {
+        "slide-up": "slideUp 0.6s ease-out forwards",
       },
     },
   },
