@@ -16,12 +16,12 @@ export function generateResumePDF() {
   .subtitle { font-size: 13px; color: #555; margin-top: 2px; }
   .contact-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; font-size: 10.5px; color: #444; }
   .contact-row span { display: flex; align-items: center; gap: 4px; }
-  .divider { height: 1.5px; background: linear-gradient(90deg, #00d4ff, #7c3aed); margin: 14px 0 10px; }
-  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #00a8cc; margin-bottom: 10px; }
+  .divider { height: 1.5px; background: #b3452b; margin: 14px 0 10px; }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #b3452b; margin-bottom: 10px; }
   .section { margin-bottom: 18px; }
   .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; }
   .role { font-size: 12.5px; font-weight: 600; color: #111; }
-  .company { font-size: 11.5px; color: #00a8cc; font-weight: 500; }
+  .company { font-size: 11.5px; color: #b3452b; font-weight: 500; }
   .dates { font-size: 10px; color: #888; white-space: nowrap; }
   .tools { font-size: 10px; color: #888; margin-bottom: 5px; }
   ul { padding-left: 14px; }
@@ -30,7 +30,7 @@ export function generateResumePDF() {
   .skill-cat { font-weight: 600; color: #111; font-size: 10.5px; }
   .skill-val { color: #444; font-size: 10.5px; }
   .project-title { font-weight: 600; font-size: 11px; color: #111; }
-  .impact { font-size: 10px; color: #00a8cc; font-style: italic; margin-top: 2px; }
+  .impact { font-size: 10px; color: #b3452b; font-style: italic; margin-top: 2px; }
   .cert-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
   .cert-name { font-weight: 500; font-size: 10.5px; }
   .cert-status { font-size: 10px; color: #888; }

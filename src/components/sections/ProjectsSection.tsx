@@ -2,69 +2,62 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { resumeData } from "@/data/resume";
-import { Zap } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ProjectsSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" ref={ref} className="section-pad">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" ref={ref} className="section-pad rule">
+      <div className="max-w-5xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-14"
         >
-          <div className="font-mono text-xs text-cyan-400/70 tracking-[0.2em] uppercase mb-4 accent-line">03 / Projects</div>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white">
-            Built With <span className="gradient-text">Real Data</span>
+          <div className="index-label mb-4">03 — Projects</div>
+          <h2 className="font-display font-semibold text-4xl md:text-5xl text-ink">
+            Built with real data
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="rule">
           {resumeData.projects.map((proj, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              className="glass rounded-2xl p-6 hover-glow flex flex-col"
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="border-b border-line py-8 grid md:grid-cols-[auto_1fr_auto] gap-x-8 gap-y-3 items-start group"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="font-mono text-xs text-muted">0{i + 1} / 04</div>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: "rgba(0,212,255,0.1)", border: "1px solid rgba(0,212,255,0.2)" }}>
-                  <Zap size={14} className="text-cyan-400" />
+              <div className="font-mono text-sm text-muted">0{i + 1}</div>
+
+              <div>
+                <div className="flex flex-wrap items-baseline gap-x-3 mb-2">
+                  <h3 className="font-display font-semibold text-2xl text-ink group-hover:text-rust transition-colors">
+                    {proj.title}
+                  </h3>
+                  <span className="text-muted text-sm">{proj.company}</span>
                 </div>
-              </div>
-
-              <h3 className="font-display font-bold text-xl text-white mb-1">{proj.title}</h3>
-              <div className="text-cyan-400 text-sm mb-4">{proj.company}</div>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {proj.stack.map((s) => (
-                  <span key={s} className="font-mono text-xs px-2 py-1 rounded border border-border text-muted"
-                    style={{ background: "rgba(124,58,237,0.06)" }}>
-                    {s}
-                  </span>
-                ))}
-              </div>
-
-              <ul className="space-y-2 mb-5 flex-1">
-                {proj.bullets.map((b, bi) => (
-                  <li key={bi} className="text-muted text-sm leading-relaxed flex gap-2">
-                    <span className="text-cyan-500/50 mt-1 flex-shrink-0 text-xs">▹</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="border-t border-border/50 pt-4">
-                <div className="font-mono text-xs text-cyan-400 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse-slow" />
+                <ul className="space-y-1.5 mb-3 max-w-2xl">
+                  {proj.bullets.map((b, bi) => (
+                    <li key={bi} className="text-muted text-sm leading-relaxed flex gap-2">
+                      <span className="text-rust mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-rust" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {proj.stack.map((s) => (
+                    <span key={s} className="font-mono text-xs px-2 py-0.5 border border-line text-muted">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                <div className="font-mono text-xs text-rust flex items-center gap-1.5">
+                  <ArrowUpRight size={13} />
                   {proj.impact}
                 </div>
               </div>
